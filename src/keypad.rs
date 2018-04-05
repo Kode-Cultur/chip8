@@ -56,7 +56,7 @@ impl Keypad {
             Keycode::C => self.set_key(0xB, state),
             Keycode::V => self.set_key(0xF, state),
 
-            _ => { println!("Unmapped key pressed: {}", key.name()) }
+            _ => println!("Unmapped key pressed: {}", key.name()),
         }
     }
 

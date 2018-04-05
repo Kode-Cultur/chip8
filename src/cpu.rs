@@ -70,7 +70,7 @@ impl Chip8 {
             draw_flag: true,
         };
         // Load fontset into memory
-        for (i, v) in CHIP8_FONTSET.iter().enumerate().take(80){
+        for (i, v) in CHIP8_FONTSET.iter().enumerate().take(80) {
             chip.mem[i] = *v;
         }
         chip
@@ -243,7 +243,11 @@ impl Chip8 {
             // EXA1: Skip next instruction if key with the value of vx is not
             // pressed.
             (0xE, _, 0xA, 0x1) => {
-                self.pc += if self.keypad.get_status(self.v[x] as usize) {0} else {2};
+                self.pc += if self.keypad.get_status(self.v[x] as usize) {
+                    0
+                } else {
+                    2
+                };
             }
             // FX07: Set vx to the value of the delay timer
             (0xF, _, 0x0, 0x7) => self.v[x] = self.dt,
