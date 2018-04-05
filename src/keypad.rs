@@ -5,6 +5,12 @@ pub struct Keypad {
     pub pad: [bool; 16],
 }
 
+impl Default for Keypad {
+    fn default() -> Keypad {
+        Keypad { pad: [false; 16] }
+    }
+}
+
 impl Keypad {
     // new() returns a new empty keypad
     pub fn new() -> Keypad {
@@ -50,7 +56,7 @@ impl Keypad {
             Keycode::C => self.set_key(0xB, state),
             Keycode::V => self.set_key(0xF, state),
 
-            _ => {}
+            _ => { println!("Unmapped key pressed: {}", key.name()) }
         }
     }
 

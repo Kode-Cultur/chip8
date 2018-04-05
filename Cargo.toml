@@ -6,3 +6,6 @@ authors = ["penguwin <penguwingit@gmail.com>"]
 [dependencies]
 rand = "0.4"
 sdl2 = "0.31.0"
+docopt = "0.8"
+serde = "1.0"
+serde_derive = "1.0"
